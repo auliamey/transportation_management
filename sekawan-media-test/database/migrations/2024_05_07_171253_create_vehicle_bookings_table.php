@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('vehicle_bookings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('vehicle_id');
             $table->unsignedBigInteger('driver_id'); 
-            $table->unsignedBigInteger('approver_id')->nullable();
+            $table->unsignedBigInteger('approver_id_1')->nullable();
+            $table->unsignedBigInteger('approver_id_2')->nullable();
             $table->boolean('approved')->default(false);
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('driver_id')->references('id')->on('users'); 
             $table->foreign('vehicle_id')->references('id')->on('vehicles');
-            $table->foreign('approver_id')->references('id')->on('users');
+            $table->foreign('approver_id_1')->references('id')->on('users');
+            $table->foreign('approver_id_2')->references('id')->on('users');
         });
     }
 

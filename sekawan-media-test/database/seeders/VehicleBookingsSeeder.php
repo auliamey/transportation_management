@@ -23,10 +23,10 @@ class VehicleBookingsSeeder extends Seeder
         // Menambahkan data dummy pemesanan kendaraan
         foreach (range(1, 10) as $index) {
             VehicleBooking::create([
-                'user_id' => $userIds[array_rand($userIds)],
                 'vehicle_id' => $vehicleIds[array_rand($vehicleIds)],
                 'driver_id' => $userIds[array_rand($userIds)], 
-                'approver_id' => $userIds[array_rand($userIds)],
+                'approver_id_1' => $userIds[array_rand($userIds)],
+                'approver_id_2' => $userIds[array_rand($userIds)],
                 'approved' => true, // Atau false, sesuai kebutuhan
             ]);
         }

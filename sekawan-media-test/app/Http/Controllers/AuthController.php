@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Vehicle;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -28,8 +30,9 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            
             // Jika autentikasi berhasil, redirect ke halaman beranda
-            return redirect()->route('vehicle.booking.create');
+            return redirect()->route('dashboard');
         }
 
         // Jika autentikasi gagal, kembali ke halaman login dengan pesan error
