@@ -17,7 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('driver_id'); 
             $table->unsignedBigInteger('approver_id_1')->nullable();
             $table->unsignedBigInteger('approver_id_2')->nullable();
-            $table->boolean('approved')->default(false);
+            $table->boolean('approved_id_1')->default(false);
+            $table->boolean('approved_id_2')->default(false);
             $table->timestamps();
 
             $table->foreign('driver_id')->references('id')->on('users'); 

@@ -42,6 +42,9 @@ class UsersSeeder extends Seeder
         $employees = [
             ['name' => 'Karyawan 1', 'email' => 'employee1@example.com', 'password' => Hash::make('password'), 'role' => 'employee'],
             ['name' => 'Karyawan 2', 'email' => 'employee2@example.com', 'password' => Hash::make('password'), 'role' => 'employee'],
+            ['name' => 'Karyawan 3', 'email' => 'employee3@example.com', 'password' => Hash::make('password'), 'role' => 'employee'],
+            ['name' => 'Karyawan 4', 'email' => 'employee4@example.com', 'password' => Hash::make('password'), 'role' => 'employee'],
+            ['name' => 'Karyawan 5', 'email' => 'employee5@example.com', 'password' => Hash::make('password'), 'role' => 'employee'],
         ];
 
         foreach ($employees as $employee) {

@@ -13,7 +13,6 @@ class VehiclesSeeder extends Seeder
      */
     public function run()
     {
-        // Menambahkan data dummy kendaraan
         Vehicle::create([
             'type' => 'Angkutan Orang',
             'license_plate' => 'AB 1234 CD',
@@ -24,6 +23,14 @@ class VehiclesSeeder extends Seeder
             'license_plate' => 'BC 5678 EF',
         ]);
 
-        // Tambahkan data dummy lainnya sesuai kebutuhan
+        Vehicle::create([
+            'type' => 'Angkutan Orang',
+            'license_plate' => 'B 478 HOK',
+        ]);
+
+        Vehicle::create([
+            'type' => 'Angkutan Barang',
+            'license_plate' => 'L 9125 P',
+        ]);
     }
 }

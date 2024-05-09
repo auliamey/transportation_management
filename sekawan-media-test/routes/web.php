@@ -11,13 +11,10 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/booking/create', [VehicleBookingController::class, 'create'])->name('vehicle.booking.create');
-// Route untuk menyimpan data pemesanan kendaraan
 Route::post('/booking', [VehicleBookingController::class, 'store'])->name('vehicle.booking.store');
-
-// Route untuk menampilkan dashboard statistik
-// Route::get('/dashboard', [VehicleBookingController::class, 'showDashboard'])->name('dashboard');
+Route::get('/booking/export', [VehicleBookingController::class, 'export'])->name('booking.export');
+Route::post('/booking/{id}/approve', [VehicleBookingController::class, 'approve'])->name('vehicle.booking.approve');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-// Route untuk mengekspor laporan pemesanan kendaraan
-Route::get('/booking/export', [VehicleBookingController::class, 'export'])->name('booking.export');
+Route::get('/export-bookings', [VehicleBookingController::class, 'export'])->name('vehicle.booking.export');

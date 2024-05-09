@@ -16,21 +16,19 @@ class VehicleBookingsSeeder extends Seeder
      */
     public function run()
     {
-        // Mendapatkan ID user dan vehicle dari tabel terkait
         $userIds = User::pluck('id')->toArray();
         $vehicleIds = Vehicle::pluck('id')->toArray();
 
-        // Menambahkan data dummy pemesanan kendaraan
         foreach (range(1, 10) as $index) {
             VehicleBooking::create([
                 'vehicle_id' => $vehicleIds[array_rand($vehicleIds)],
                 'driver_id' => $userIds[array_rand($userIds)], 
-                'approver_id_1' => $userIds[array_rand($userIds)],
-                'approver_id_2' => $userIds[array_rand($userIds)],
-                'approved' => true, // Atau false, sesuai kebutuhan
+                'approver_id_1' => 1,
+                'approver_id_2' => 2,
+                'approved_id_1' => false, 
+                'approved_id_2' => false, 
             ]);
         }
 
-        // Tambahkan data dummy lainnya sesuai kebutuhan
     }
 }

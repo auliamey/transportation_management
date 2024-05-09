@@ -14,28 +14,25 @@ class VehicleBooking extends Model
         'driver_id',
         'approver_id_1',
         'approver_id_2',
-        'approved',
+        'approved_id_1',
+        'approved_id_2',
     ];
 
-    // Relasi dengan model User
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // Relasi dengan model Vehicle
     public function vehicle()
     {
         return $this->belongsTo(Vehicle::class);
     }
 
-    // Relasi dengan model User (driver)
     public function driver()
     {
         return $this->belongsTo(User::class, 'driver_id');
     }
 
-    // Relasi dengan model User (approver)
     public function approver()
     {
         return $this->belongsTo(User::class, 'approver_id');
